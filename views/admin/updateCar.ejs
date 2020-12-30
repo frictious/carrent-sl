@@ -1,0 +1,119 @@
+<%- include ('../admin/partials/header') %>
+    <!-- Main Section -->
+    <main>
+        <section>
+            <h1>Welcome to The Add Car Section</h1>
+        </section>
+
+        <section>
+            <!-- Form section -->
+            <form action="/admin/car/<%- car._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <div class="col">
+                        <div class="first">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" value="<%- car.name %>">
+                        </div>
+
+                        <div class="second">
+                            <label for="model" >Model</label>
+                            <input type="text" name="model" id="model" value="<%- car.model %>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <label for="mileage">Mileage</label>
+                            <input type="text" name="mileage" id="mileage" value="<%- car.mileage %>">
+                        </div>
+
+                        <div class="second">
+                            <div class="dropdown">
+                                <label for="transmission">Transmission</label>
+                                <select name="transmission" class="dropdownSelect">
+                                    <option value="manual">Manual</option>
+                                    <option value="automatic">Automatic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <label for="seats">Number of Seats</label>
+                            <input type="number" name="seats" id="seats" value="<%- car.seats %>">
+                        </div>
+
+                        <div class="second">
+                            <label for="luggage">Luggage</label>
+                            <input type="text" name="luggage" id="luggage" value="<%- car.luggage %>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <div class="dropdown">
+                                <label for="engineType" class="dropdownLabel">Engine Type</label>
+                                <select name="engineType" id="engineType" class="dropdownSelect">
+                                    <option value="petrol">Petrol</option>
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="second">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" name="quantity" id="quantity" value="<%- car.quantity %>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <label for="noOfDoors">No of Doors</label>
+                            <input type="number" name="numberOfDoors" id="noOfDoors" value="<%- car.noOfDoors%>">
+                        </div>
+                        <div class="second">
+                            <label for="price">price</label>
+                            <input type="number" name="price" id="price" value="<%- car.price %>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <img src="/files/<%- car.front%>" alt="Car Front Photo">
+                            <label for="frontPhoto">Front Photo</label>
+                            <input type="file" name="front" id="frontPhoto">
+                        </div>
+                        <div class="second">
+                            <img src="/files/<%- car.back%>" alt="Car Back Photo">
+                            <label for="backPhoto">Back Photo</label>
+                            <input type="file" name="back" id="backPhoto">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <img src="/files/<%- car.inside%>" alt="Car Inside Photo">
+                            <label for="insidePhoto">Inside Photo</label>
+                            <input type="file" name="inside" id="insidePhoto">
+                        </div>
+                        <div class="second">
+                            <img src="/files/<%- car.full%>" alt="Car Full Photo">
+                            <label for="fullPhoto">Full Photo</label>
+                            <input type="file" name="full" id="fullPhoto">
+                        </div>
+                    </div>
+
+                    <label for="description">Description</label>
+                    <textarea rows="10" cols="10" name="description"><%- car.description %></textarea>
+
+                    <button>UPDATE</button>
+                </fieldset>
+            </form>
+            <!-- End of form section -->
+        </section>
+
+    </main>
+    <!-- End of Main Section -->
+
+<%- include ('../admin/partials/footer') %>

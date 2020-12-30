@@ -1,0 +1,30 @@
+<%- include ('../admin/partials/header') %>
+    <!-- Main Section -->
+    <main>
+        <section>
+            <h1>WELCOME BACK</h1>
+        </section>
+
+        <section class="login">
+            <!-- Form section -->
+            <form action="/admin/login" method="POST">
+                <fieldset>
+                    <h1 style="text-align: center;">LOGIN</h1>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+
+                    <a href="#">Forgot Password?</a>
+
+                    <button>LOGIN</button>
+                </fieldset>
+            </form>
+            <!-- End of form section -->
+        </section>
+
+    </main>
+    <!-- End of Main Section -->
+
+<%- include ('../admin/partials/footer') %>

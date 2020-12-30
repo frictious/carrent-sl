@@ -1,0 +1,45 @@
+<%- include ('../admin/partials/header') %>
+    <!-- Main Section -->
+    <main class="viewCars">
+        <section>
+            <h1>Welcome to The Drivers Section</h1>
+        </section>
+
+        <section>
+            <table border="1px">
+                <thead class="tableHead">
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>C.V</th>
+                    <th colspan="2">Actions</th>
+                </thead>
+                <% if(drivers.length > 0) { %> 
+                    <tbody class="tableBody striped">
+                    <% drivers.forEach((driver) => { %> 
+                        <tr>
+                            <td><%- driver.name %></td>
+                            <td><%- driver.contact %></td>
+                            <td><%- driver.email %></td>
+                            <td><a href="/admin/files/<%-driver.cv%>"><%- driver.cvName %></a></td>
+                            <td>
+                                <form action="/admin/driver/call/<%- driver._id%>" method="POST">
+                                    <button type="submit">Call</button>   
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/admin/driver/<%- driver._id%>?_method=DELETE" method="post" class="delete">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                    </tbody>
+                <% } %>
+            </table>
+        </section>
+
+    </main>
+    <!-- End of Main Section -->
+
+<%- include ('../admin/partials/footer') %>

@@ -1,0 +1,264 @@
+<%- include ('partials/header') %>
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs">
+			<span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Payment <i class="ion-ios-arrow-forward"></i></span>
+		</p>
+        <h1 class="mb-3 bread">Payment Information</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if(user) { %> 
+   <div class="page-wrapper">
+      <div class="checkout shopping">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 mx-auto">
+                  <div class="block billing-details">
+                     <h4 class="widget-title">Billing Details</h4>
+                     <form class="checkout-form">
+                        <img src="/files/<%- car.full %>" alt="Car Full Image" class="img-responsive">
+                        <div class="form-group">
+                           <label for="full_name">Full Name</label>
+                           <input type="text" class="form-control" id="full_name" value="<%- user.name %>" name="name">
+                        </div>
+                        <div class="form-group">
+                           <label for="user_address">Address</label>
+                           <input type="text" class="form-control" id="user_address" value="<%- user.address %>" name="address">
+                        </div>
+                        <!-- <div class="checkout-country-code clearfix">
+                           <div class="form-group">
+                              <label for="user_post_code">Zip Code</label>
+                              <input type="text" class="form-control" id="user_post_code" name="zipcode" value="">
+                           </div>
+                           <div class="form-group" >
+                              <label for="user_city">City</label>
+                              <input type="text" class="form-control" id="user_city" name="city" value="">
+                           </div>
+                        </div> -->
+                        <!-- <div class="form-group">
+                           <label for="user_country">Country</label>
+                           <input type="text" class="form-control" id="user_country" placeholder="">
+                        </div> -->
+                     </form>
+                  </div>
+                  <div class="block">
+                     <h4 class="widget-title">Car Information</h4>
+                     <p>Credit Cart Details (Secure payment)</p>
+                     <div class="checkout-product-details">
+                        <div class="payment">
+                           <div class="card-details">
+                              <form  class="checkout-form">
+                                 <div class="form-group">
+                                    <label for="card-number">Card Number <span class="required">*</span></label>
+                                    <input  id="card-number" class="form-control"   type="tel" placeholder="•••• •••• •••• ••••">
+                                 </div>
+                                 <div class="form-group half-width padding-right">
+                                    <label for="card-expiry">Expiry (MM/YY) <span class="required">*</span></label>
+                                    <input id="card-expiry" class="form-control" type="tel" placeholder="MM / YY">
+                                 </div>
+                                 <div class="form-group half-width padding-left">
+                                    <label for="card-cvc">Card Code <span class="required">*</span></label>
+                                    <input id="card-cvc" class="form-control"  type="tel" maxlength="4" placeholder="CVC" >
+                                 </div>
+                                 <a href="/customer/checkout/confirmation" class="btn btn-main mt-20">Rent Car</a >
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+<% } else { %>
+   <div class="page-wrapper">
+      <div class="checkout shopping">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 mx-auto">
+                  <div class="block billing-details">
+                     <h4 class="widget-title">Billing Details</h4>
+                     <form class="checkout-form">
+                        <div class="form-group">
+                           <div class="row justify-content-center">
+                              <div class="col-md-12">
+                                 <div class="car-details">
+                                    <div class="img rounded" style="background-image: url(/files/<%-car.full%>);"><img src="" alt=""></div>
+                                 </div>
+                              </div>
+                           </div>
+                  </div>
+                  <div class="block">
+                     <div class="checkout-product-details">
+                        <div class="payment">
+                           <div class="card-details">
+                              <form>
+                                 <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                 </div>
+
+                                 <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                 </div>
+
+                                 <div class="form-group">
+                                    <label for="user_price">Price</label>
+                                    <input type="text" class="form-control" id="price" value="<%- car.price %>" readonly>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                    <label for="user_phone_number">Phone Number</label>
+                                    <input type="text" class="form-control" id="user_phone_number" placeholder="+232-12-123456" required>
+                                 </div>
+
+                                 <button type="button" class="btn btn-main mt-20" onClick="makePayment()">Pay Now</button>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+<% } %>
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+   <div class="container">
+       <div class="row mb-5">
+           <div class="col-md">
+               <div class="ftco-footer-widget mb-4">
+                   <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>Rent</span></a></h2>
+                   <p>
+                       The best, comfortable, and affordable car rental service you can get in the country.
+                   </p>
+                   <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                       <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                       <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                       <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                   </ul>
+               </div>
+           </div>
+
+           <div class="col-md">
+               <div class="ftco-footer-widget mb-4 ml-md-5">
+                   <h2 class="ftco-heading-2">Information</h2>
+                   <ul class="list-unstyled">
+                       <li><a href="/about" class="py-2 d-block">About</a></li>
+                       <li><a href="/services" class="py-2 d-block">Services</a></li>
+                       <li><a href="#" class="py-2 d-block">Term and Conditions</a></li>
+                       <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
+                       <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
+                   </ul>
+               </div>
+           </div>
+
+           <div class="col-md">
+               <div class="ftco-footer-widget mb-4">
+                   <h2 class="ftco-heading-2">Customer Support</h2>
+                   <ul class="list-unstyled">
+                       <li><a href="#" class="py-2 d-block">FAQ</a></li>
+                       <li><a href="#" class="py-2 d-block">Payment Option</a></li>
+                       <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
+                       <li><a href="#" class="py-2 d-block">How it works</a></li>
+                       <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
+                   </ul>
+               </div>
+           </div>
+
+           <div class="col-md">
+               <div class="ftco-footer-widget mb-4">
+                   <h2 class="ftco-heading-2">Have a Questions?</h2>
+                   <div class="block-23 mb-3">
+                       <ul>
+                           <li><span class="icon icon-map-marker"></span><span class="text">Njala Campus, Mokonde, Moyamba, Sierra Leone</span></li>
+                           <li><a href="#"><span class="icon icon-phone"></span><span class="text">+232-77-123456</span></a></li>
+                           <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@carrent.com</span></a></li>
+                       </ul>
+                   </div>
+               </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-md-12 text-center">
+                   <p>
+                       Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Njala CarRent by <a href="/" target="_blank">Final Year Computer Science Students</a>
+                   </p>
+               </div>
+           </div>
+       </div>
+</footer>
+   
+       <!-- loader -->
+       <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+       
+      <script>
+         function makePayment() {
+            let amount = document.getElementById("price");
+            let email = document.getElementById("email");
+            let fullName = document.getElementById("fullName");
+            let phoneNo = document.getElementById("user_phone_number");
+            FlutterwaveCheckout({
+               public_key: "FLWPUBK_TEST-87fd5493d74030f6e3db440d9f962b33-X",
+               tx_ref: "hooli-tx-1920bbtyt",
+               amount: (price.value * 1000),
+               currency: "SSL",
+               country: "SL",
+               payment_options: "card",
+               redirect_url: `/success/done`,
+               meta: {
+               consumer_id: 23,
+               consumer_mac: "92a3-912ba-1192a",
+               },
+               customer: {
+               email: email.value,
+               phone_number: phoneNo.value,
+               name: fullName.value,
+               },
+               callback: function (data) {
+               console.log(data);
+               },
+               onclose: function() {
+               // close modal
+               },
+               customizations: {
+               title: "CarRent",
+               description: "Car Rental Services",
+               logo: "https://cdn.filestackcontent.com/s1fyp06lR028VrfaYbvE",
+               },
+            });
+         }
+      </script>
+
+       <script src="/js/jquery.min.js"></script>
+       <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+       <script src="/js/popper.min.js"></script>
+       <script src="/js/bootstrap.min.js"></script>
+       <script src="/js/jquery.easing.1.3.js"></script>
+       <script src="/js/jquery.waypoints.min.js"></script>
+       <script src="/js/jquery.stellar.min.js"></script>
+       <script src="/js/owl.carousel.min.js"></script>
+       <script src="/js/jquery.magnific-popup.min.js"></script>
+       <script src="/js/aos.js"></script>
+       <script src="/js/jquery.animateNumber.min.js"></script>
+       <script src="/js/bootstrap-datepicker.js"></script>
+       <script src="/js/jquery.timepicker.min.js"></script>
+       <script src="/js/scrollax.min.js"></script>
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+       <!-- <script src="/js/google-map.js"></script> -->
+       <script src="/js/main.js"></script>
+       
+       
+   </body>
+</html>

@@ -1,0 +1,52 @@
+<%- include ('partials/header') %>
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+      <div class="col-md-9 ftco-animate pb-5">
+      <p class="breadcrumbs">
+			  <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>      <span>Update Profile <i class="ion-ios-arrow-forward"></i></span>
+		  </p>
+        <h1 class="mb-3 bread">Customer Profile</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signin-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 mx-auto">
+        <div class="block text-center">
+          <h2 class="text-center">Update Account</h2>
+          <form class="text-left clearfix" action="/profile/<%- customer._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" value="<%- customer.name %>">
+            </div>
+            <div class="form-group">
+              <input type="text" name="contact" class="form-control" value="<%- customer.contact %>" placeholder="Contact">
+            </div>
+            <div class="form-group">
+              <input type="text" name="address" class="form-control" value="<%- customer.address %>" placeholder="Address">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" value="<%- customer.email %>">
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="password" name="retypePassword" class="form-control"  placeholder="Retype Password">
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-main text-center">Update</button>
+            </div>
+          </form>
+          <!--<p class="mt-20">Already hava an account?<a href="/login"> Login</a></p>-->
+          <p><a href="/forgotPassword">Forgot your password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include ('partials/footer') %>

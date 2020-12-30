@@ -1,0 +1,67 @@
+<%- include ('../admin/partials/header') %>
+    <!-- Main Section -->
+    <main>
+        <section>
+            <h1>ADMIN REGISTRATION</h1>
+        </section>
+
+        <section>
+            <!-- Form section -->
+            <form action="/admin/signUp" method="POST">
+                <fieldset>
+                    <div class="col">
+                        <div class="full">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="full">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <label for="contact">Contact</label>
+                            <input type="tel" name="contact" id="contact">
+                        </div>
+
+                        <div class="second">
+                            <div class="">
+                                <label for="role" class="">Role</label>
+                                <select name="role" id="role" class="dropdownSelect">
+                                    <option value="administrator">Administrator</option>
+                                    <option value="staff">Staff</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="first">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+
+                        <div class="second">
+                            <label for="retypePassword">Retype Password</label>
+                            <input type="password" name="retypePassword" id="retypePassword">
+                        </div>
+                    </div>
+
+                    <label for="description">Admin Description</label>
+                    <textarea rows="10" cols="10" name="description" placeholder="Admin Description"></textarea>
+
+                    <button>CREATE ACCOUNT</button>
+                </fieldset>
+            </form>
+            <!-- End of form section -->
+        </section>
+
+    </main>
+    <!-- End of Main Section -->
+
+<%- include ('../admin/partials/footer') %>

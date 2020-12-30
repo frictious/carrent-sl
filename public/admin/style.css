@@ -1,0 +1,600 @@
+/*GENERAL STYLES*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*END OF GENERAL STYLES*/
+/*=========================================================================*/
+
+/*BODY CODE GOES IN HERE*/
+body{
+    /* background-color: #232323; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(minmax(50px, auto));
+    grid-column-gap: 5px;
+}
+/*END OF BODY CODE*/
+/*=========================================================================*/
+
+/* HEADER SECTION */
+header{
+    background-color: #232323;
+    grid-column: 1 / 5;
+    height: 50px;
+}
+
+header nav{
+    height: 100%;
+}
+
+header nav h1{
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    color: #ffffff;
+    float: left;
+}
+
+header nav h1 span{
+    color: #01d28e;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header nav ul{
+    float: right;
+    box-sizing: border-box;
+    list-style: none;
+    height: 100%;
+}
+
+header nav ul li{
+    height: inherit;
+    width: 100%;
+    margin-right: 20px;
+    position: relative;
+}
+
+header nav ul li a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+header nav ul li a:hover{
+    background-color: #027951;
+    transition: 1.5s;
+}
+
+header nav ul li ul{
+    display: none;
+}
+
+header nav ul li:hover ul{
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    left: 0%;
+    width: 100%;
+}
+
+header nav ul li ul li{
+    background-color: #232323;
+}
+/* END OF HEADER SECTION */
+/*=========================================================================*/
+
+/* ASIDE SECTION */
+aside{
+    background-color: #027951;
+    grid-row: 2 / 13;
+    min-height: 87vh;
+}
+
+aside nav{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+aside nav ul{
+    list-style: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+aside nav ul li{
+    width: 100%;
+}
+
+aside nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+aside nav ul li a:hover{
+    background-color: #232323;
+    transition: 1s;
+}
+/*END OF ASIDE SECTION*/
+/*=========================================================================*/
+
+/*MAIN SECTION*/
+main{
+    grid-column: 2 / 5;
+    grid-row: 2 / 13;
+    padding: 5px;
+}
+
+main h1{
+    width: 50%;
+    padding: 5px;
+    margin: 0px auto;
+    text-align: center;
+    /* color: rgb(53, 47, 47); */
+}
+
+main p{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+main ol, main ol ul{
+    padding-left: 30px;
+}
+
+main ol li, main ul li{
+    margin-bottom: 5px;
+}
+
+/*VIEW CARS SECTION*/
+main table{
+    width: 95%;
+    border: none;
+    margin: 0px auto;
+    border: 1px solid #111111;
+    padding: 0px;
+    border-collapse: collapse;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+}
+
+main table tr td{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+thead{
+    font-size: 1.5em;
+    line-height: 1.5em;
+    background-color: transparent;
+}
+
+.striped tr:nth-of-type(odd){
+    background-color: rgb(153, 158, 165);
+    /* padding: 10px; */
+}
+
+/* .striped tr:nth-of-type(even){
+    background-color: rgb(30, 41, 54);
+} */
+
+/* main table tr td form{
+    border: 1px solid red;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+main table tr td form  button.first{
+    grid-column: 1 / 2;
+}
+
+main table tr td form  button.second{
+    grid-column: 1 / 2;
+} */
+/*END OF VIEW CARS SECTION*/
+
+/*END OF MAIN SECTION*/
+/*=========================================================================*/
+/*FOOTER SECTION*/
+footer{
+    background-color: #111111;
+    grid-column: 1 / 5;
+    grid-row: 13 / 18;
+    text-align: center;
+    color: #ffffff;
+}
+
+footer p{
+    padding: 10px;
+}
+/*END OF FOOTER SECTION*/
+/*=========================================================================*/
+
+/*MEDIA QUERY SECTION*/
+@media screen and (min-width: 0px) and (max-width: 768px){
+    /*BODY CODE GOES IN HERE*/
+    body{
+        /* background-color: #232323; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(minmax(50px, auto));
+        grid-column-gap: 5px;
+    }
+
+    /* HEADER SECTION */
+    header{
+        background-color: #232323;
+        grid-column: 1 / 6;
+        height: 50px;
+    }
+
+    aside{
+        background-color: #01d28e;
+        grid-column: 1 / 6;
+        grid-row: 2;
+        height: 50px !important;
+    }
+
+    /* header nav ul{
+        display: none;
+    } */
+
+    /* header nav .hambugger{
+        display: block;
+        float: right;
+        color: #ffffff;
+        position: absolute;
+        top: 15px;
+        right: 5%;
+    } */
+
+    /* header nav .hambugger a:hover{
+        display: inline-block;
+    } */
+
+    aside nav{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    aside nav ul{
+        display: inline-block;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .car{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addCar{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .driver{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .customers{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addAdmin{
+        display: inline-block;
+        text-align: center;
+    }
+
+    aside nav ul li a{
+        display: inline;
+    }
+
+    main{
+        grid-column: 1 / 6;
+        grid-row: 3 / 13;
+        padding: 10px;
+        width: 90%;
+        margin: 0px auto;
+        box-sizing: border-box;
+    }
+
+    main table{
+        width: 95%;
+    }
+
+    main h1{
+        width: 100%;
+    }
+
+    /*FOOTER SECTION*/
+    footer{
+        background-color: #111111;
+        grid-column: 1 / 6;
+        grid-row: 13 / 18;
+        text-align: center;
+        color: #ffffff;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px){
+    /*BODY CODE GOES IN HERE*/
+    body{
+        /* background-color: #232323; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(minmax(50px, auto));
+        grid-column-gap: 5px;
+    }
+
+    /* HEADER SECTION */
+    header{
+        background-color: #232323;
+        grid-column: 1 / 6;
+        height: 50px;
+    }
+
+    aside{
+        background-color: #01d28e;
+        grid-column: 1 / 6;
+        grid-row: 2;
+        min-height: 50px !important;
+        /* min-height: fit-content; */
+    }
+
+    /* header nav ul{
+        display: none;
+    } */
+
+    /* header nav .hambugger{
+        display: block;
+        float: right;
+        color: #ffffff;
+        position: absolute;
+        top: 15px;
+        right: 5%;
+    } */
+
+    /* header nav .hambugger a:hover{
+        display: inline-block;
+    } */
+
+    aside nav{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    aside nav ul{
+        display: inline-block;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .car{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addCar{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .driver{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .customers{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addAdmin{
+        display: inline-block;
+        text-align: center;
+    }
+
+    aside nav ul li a{
+        display: inline;
+    }
+
+    main{
+        grid-column: 1 / 6;
+        grid-row: 3 / 13;
+        padding: 10px;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    main h1{
+        width: 100%;
+    }
+
+    /*FOOTER SECTION*/
+    footer{
+        background-color: #111111;
+        grid-column: 1 / 6;
+        grid-row: 13 / 18;
+        text-align: center;
+        color: #ffffff;
+    }
+}
+
+/*@media screen and (min-width: 992px) and (max-width: 1199px){
+    aside{
+        background-color: #01d28e;
+        grid-column: 1 / 5;
+        grid-row: 2 / 2;
+    }
+
+    /* header nav ul{
+        display: none;
+    } */
+
+    /* header nav .hambugger{
+        display: block;
+        float: right;
+        color: #ffffff;
+        position: absolute;
+        top: 15px;
+        right: 5%;
+    } */
+
+    /* header nav .hambugger a:hover{
+        display: inline-block;
+    } 
+
+    .admin{
+        display: none;
+    }
+
+    .profile{
+        display: none;
+    }
+
+    aside nav{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    aside nav ul{
+        display: inline-block;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .car{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addCar{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addAdmin{
+        display: inline-block;
+        text-align: center;
+    }
+
+    aside nav ul li a{
+        display: inline;
+    }
+
+    main{
+        grid-column: 1 / 5;
+        grid-row: 3 / 13;
+        padding: 10px;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    main h1{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    aside{
+        background-color: #01d28e;
+        grid-column: 1 / 5;
+        grid-row: 2 / 2;
+    }
+
+    /* header nav ul{
+        display: none;
+    } */
+
+    /* header nav .hambugger{
+        display: block;
+        float: right;
+        color: #ffffff;
+        position: absolute;
+        top: 15px;
+        right: 5%;
+    } */
+
+    /* header nav .hambugger a:hover{
+        display: inline-block;
+    } 
+
+    .admin{
+        display: none;
+    }
+
+    .profile{
+        display: none;
+    }
+
+    aside nav{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    aside nav ul{
+        display: inline-block;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .car{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addCar{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .addAdmin{
+        display: inline-block;
+        text-align: center;
+    }
+
+    aside nav ul li a{
+        display: inline;
+    }
+
+    main{
+        grid-column: 1 / 5;
+        grid-row: 3 / 13;
+        padding: 10px;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    main h1{
+        display: none;
+    }
+}*/
+/*END OF MEDIA QUERY SECTION*/
+/*=========================================================================*/

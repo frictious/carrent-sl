@@ -1,0 +1,49 @@
+<%- include ('partials/header') %>
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+      <div class="col-md-9 ftco-animate pb-5">
+      <p class="breadcrumbs">
+			  <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>      <span>Driver Registration <i class="ion-ios-arrow-forward"></i></span>
+		  </p>
+        <h1 class="mb-3 bread">Apply to be A Driver</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signin-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 mx-auto">
+        <div class="block text-center">
+          <h2 class="text-center">Apply Here</h2>
+          <form class="text-left clearfix" action="/driver" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="contact" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="address" class="form-control" placeholder="Address" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">C.V (pdf)
+              <input type="file" name="cv" class="form-control" placeholder="Driver C.V" required>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-main text-center">Apply</button>
+            </div>
+          </form>
+          <!-- <p class="mt-20">Already hava an account?<a href="/login"> Login</a></p>-->
+          <p>All fields are required</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include ('partials/footer') %>

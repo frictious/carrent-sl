@@ -1,0 +1,38 @@
+<%- include ('../admin/partials/header') %>
+    <!-- Main Section -->
+    <main class="viewCars">
+        <section>
+            <h1>Welcome to The Cars Section</h1>
+        </section>
+
+            <section>
+                <table border="2">
+                    <thead class="tableHead">
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th colspan="2">Action</th>
+                    </thead>
+                    <tbody class="tableBody striped">
+                        <% if(cars.length > 0) { %> 
+                            <% cars.forEach((car) => { %> 
+                                <tr>
+                                    <td><%-car.carName%></td>
+                                    <td><%- car.quantity%></td>
+                                    <td>Available</td>
+                                    <td><a href="/admin/<%-car._id%>/edit">Edit</a></td>
+                                    <td>
+                                        <form action="/admin/car/<%-car._id%>?_method=DELETE" method="POST">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+    </main>
+    <!-- End of Main Section -->
+
+<%- include ('../admin/partials/footer') %>
